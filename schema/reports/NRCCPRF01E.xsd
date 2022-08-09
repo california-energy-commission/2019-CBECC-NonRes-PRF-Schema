@@ -5859,20 +5859,27 @@ else ThrmlZn:ExhFlow
                                           <xsd:documentation source="FieldText">Airflow (cfm)</xsd:documentation>
                                        </xsd:annotation>
                                     </xsd:element>
-                                    <xsd:element name="Zone07_RatedFlowCapacity" type="hvac:RatedFlowCapacity" >
-                                       <xsd:annotation>
-                                          <xsd:documentation source="FieldText">Design</xsd:documentation>
-                                          <xsd:appinfo source="CBECCnrXML">
-                                             <dtyp:CBECCnrXMLterm>If AirSys:ThrmlUnit  result = AirSys:ThrmlUnit:PriAirFlowMax Else If ZnSys  See conditions Either result = ZnSys:RtdFlowCap Or result = ZnSys:Fan:FlowCap End If</dtyp:CBECCnrXMLterm>
-                                             <dtyp:termConditions>if ZnSys:Type = "VentilatonOnly"
+                                    <xsd:choice maxOccurs="1">
+                                       <xsd:element name="Zone07_RatedFlowCapacity" type="hvac:RatedFlowCapacity" >
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">Design</xsd:documentation>
+                                             <xsd:appinfo source="CBECCnrXML">
+                                                <dtyp:CBECCnrXMLterm>If AirSys:ThrmlUnit  result = AirSys:ThrmlUnit:PriAirFlowMax Else If ZnSys  See conditions Either result = ZnSys:RtdFlowCap Or result = ZnSys:Fan:FlowCap End If</dtyp:CBECCnrXMLterm>
+                                                <dtyp:termConditions>if ZnSys:Type = "VentilatonOnly"
 result = ZnSys:RtdFlowCap
 else
 result = ZnSys:Fan:FlowCap
 end if
 </dtyp:termConditions>
-                                          </xsd:appinfo>
-                                       </xsd:annotation>
-                                    </xsd:element>
+                                             </xsd:appinfo>
+                                          </xsd:annotation>
+                                       </xsd:element>
+                                       <xsd:element name="Zone07_NotApplicableMessage" type="comp:NotApplicableMessage" >
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">Design</xsd:documentation>
+                                          </xsd:annotation>
+                                       </xsd:element>
+                                    </xsd:choice>
                                     <xsd:choice maxOccurs="1">
                                        <xsd:element name="Zone08_AirFlowMinimum" type="hvac:AirFlowMinimum" >
                                           <xsd:annotation>
@@ -8301,14 +8308,21 @@ Else result = SeeOtherSection  End If</dtyp:termConditions>
                                           </xsd:appinfo>
                                        </xsd:annotation>
                                     </xsd:element>
-                                    <xsd:element name="TailoredGen02_SpaceFunctionTailored" type="comp:SpaceFunctionTailored" >
-                                       <xsd:annotation>
-                                          <xsd:documentation source="FieldText">Primary Function Area</xsd:documentation>
-                                          <xsd:appinfo source="CBECCnrXML">
-                                             <dtyp:CBECCnrXMLterm>Spc:SpcFunc</dtyp:CBECCnrXMLterm>
-                                          </xsd:appinfo>
-                                       </xsd:annotation>
-                                    </xsd:element>
+                                    <xsd:choice maxOccurs="1">
+                                       <xsd:element name="TailoredGen02_SpaceFunctionTailored" type="comp:SpaceFunctionTailored" >
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">Primary Function Area</xsd:documentation>
+                                             <xsd:appinfo source="CBECCnrXML">
+                                                <dtyp:CBECCnrXMLterm>Spc:SpcFunc</dtyp:CBECCnrXMLterm>
+                                             </xsd:appinfo>
+                                          </xsd:annotation>
+                                       </xsd:element>
+                                       <xsd:element name="TailoredGen02_NotApplicableMessage" type="comp:NotApplicableMessage" >
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">Primary Function Area</xsd:documentation>
+                                          </xsd:annotation>
+                                       </xsd:element>
+                                    </xsd:choice>
                                     <xsd:element name="TailoredGen03_SpaceIlluminationLevel" type="lit:SpaceIlluminationLevel" >
                                        <xsd:annotation>
                                           <xsd:documentation source="FieldText">Illuminance Value (Lux)</xsd:documentation>
@@ -8399,14 +8413,21 @@ Else result = SeeOtherSection  End If</dtyp:termConditions>
                                           </xsd:appinfo>
                                        </xsd:annotation>
                                     </xsd:element>
-                                    <xsd:element name="TailoredRCR02_SpaceFunctionTailored" type="comp:SpaceFunctionTailored" >
-                                       <xsd:annotation>
-                                          <xsd:documentation source="FieldText">Primary Function Area</xsd:documentation>
-                                          <xsd:appinfo source="CBECCnrXML">
-                                             <dtyp:CBECCnrXMLterm>Spc:SpcFunc</dtyp:CBECCnrXMLterm>
-                                          </xsd:appinfo>
-                                       </xsd:annotation>
-                                    </xsd:element>
+                                    <xsd:choice maxOccurs="1">
+                                       <xsd:element name="TailoredRCR02_SpaceFunctionTailored" type="comp:SpaceFunctionTailored" >
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">Primary Function Area</xsd:documentation>
+                                             <xsd:appinfo source="CBECCnrXML">
+                                                <dtyp:CBECCnrXMLterm>Spc:SpcFunc</dtyp:CBECCnrXMLterm>
+                                             </xsd:appinfo>
+                                          </xsd:annotation>
+                                       </xsd:element>
+                                       <xsd:element name="TailoredRCR02_NotApplicableMessage" type="comp:NotApplicableMessage" >
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">Primary Function Area</xsd:documentation>
+                                          </xsd:annotation>
+                                       </xsd:element>
+                                    </xsd:choice>
                                     <xsd:element name="TailoredRCR03_SpaceFloorArea" type="com:SpaceFloorArea" >
                                        <xsd:annotation>
                                           <xsd:documentation source="FieldText">Area (ft[d:sup]2[/d:sup])</xsd:documentation>
@@ -8473,14 +8494,21 @@ Else result = SeeOtherSection  End If</dtyp:termConditions>
                                           </xsd:appinfo>
                                        </xsd:annotation>
                                     </xsd:element>
-                                    <xsd:element name="TailoredWall02_SpaceFunctionTailored" type="comp:SpaceFunctionTailored" >
-                                       <xsd:annotation>
-                                          <xsd:documentation source="FieldText">Primary Function Area</xsd:documentation>
-                                          <xsd:appinfo source="CBECCnrXML">
-                                             <dtyp:CBECCnrXMLterm>Spc:SpcFunc</dtyp:CBECCnrXMLterm>
-                                          </xsd:appinfo>
-                                       </xsd:annotation>
-                                    </xsd:element>
+                                    <xsd:choice maxOccurs="1">
+                                       <xsd:element name="TailoredWall02_SpaceFunctionTailored" type="comp:SpaceFunctionTailored" >
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">Primary Function Area</xsd:documentation>
+                                             <xsd:appinfo source="CBECCnrXML">
+                                                <dtyp:CBECCnrXMLterm>Spc:SpcFunc</dtyp:CBECCnrXMLterm>
+                                             </xsd:appinfo>
+                                          </xsd:annotation>
+                                       </xsd:element>
+                                       <xsd:element name="TailoredWall02_NotApplicableMessage" type="comp:NotApplicableMessage" >
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">Primary Function Area</xsd:documentation>
+                                          </xsd:annotation>
+                                       </xsd:element>
+                                    </xsd:choice>
                                     <xsd:element name="TailoredWall03to05Label" minOccurs="0">
                                        <xsd:annotation>
                                           <xsd:documentation source="FieldText">CALCULATED ALLOWANCE (Watts)</xsd:documentation>
@@ -8646,14 +8674,21 @@ Else result = SeeOtherSection  End If</dtyp:termConditions>
                                           </xsd:appinfo>
                                        </xsd:annotation>
                                     </xsd:element>
-                                    <xsd:element name="TailoredFloor02_SpaceFunctionTailored" type="comp:SpaceFunctionTailored" >
-                                       <xsd:annotation>
-                                          <xsd:documentation source="FieldText">Primary Function Area</xsd:documentation>
-                                          <xsd:appinfo source="CBECCnrXML">
-                                             <dtyp:CBECCnrXMLterm>Spc:SpcFunc</dtyp:CBECCnrXMLterm>
-                                          </xsd:appinfo>
-                                       </xsd:annotation>
-                                    </xsd:element>
+                                    <xsd:choice maxOccurs="1">
+                                       <xsd:element name="TailoredFloor02_SpaceFunctionTailored" type="comp:SpaceFunctionTailored" >
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">Primary Function Area</xsd:documentation>
+                                             <xsd:appinfo source="CBECCnrXML">
+                                                <dtyp:CBECCnrXMLterm>Spc:SpcFunc</dtyp:CBECCnrXMLterm>
+                                             </xsd:appinfo>
+                                          </xsd:annotation>
+                                       </xsd:element>
+                                       <xsd:element name="TailoredFloor02_NotApplicableMessage" type="comp:NotApplicableMessage" >
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">Primary Function Area</xsd:documentation>
+                                          </xsd:annotation>
+                                       </xsd:element>
+                                    </xsd:choice>
                                     <xsd:element name="TailoredFloor03to05Label" minOccurs="0">
                                        <xsd:annotation>
                                           <xsd:documentation source="FieldText">CALCULATED ALLOWANCE (Watts)</xsd:documentation>
@@ -8818,14 +8853,21 @@ Else result = SeeOtherSection  End If</dtyp:termConditions>
                                           </xsd:appinfo>
                                        </xsd:annotation>
                                     </xsd:element>
-                                    <xsd:element name="TailoredOrnamental02_SpaceFunctionTailored" type="comp:SpaceFunctionTailored" >
-                                       <xsd:annotation>
-                                          <xsd:documentation source="FieldText">Primary Function Area</xsd:documentation>
-                                          <xsd:appinfo source="CBECCnrXML">
-                                             <dtyp:CBECCnrXMLterm>Spc:SpcFunc</dtyp:CBECCnrXMLterm>
-                                          </xsd:appinfo>
-                                       </xsd:annotation>
-                                    </xsd:element>
+                                    <xsd:choice maxOccurs="1">
+                                       <xsd:element name="TailoredOrnamental02_SpaceFunctionTailored" type="comp:SpaceFunctionTailored" >
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">Primary Function Area</xsd:documentation>
+                                             <xsd:appinfo source="CBECCnrXML">
+                                                <dtyp:CBECCnrXMLterm>Spc:SpcFunc</dtyp:CBECCnrXMLterm>
+                                             </xsd:appinfo>
+                                          </xsd:annotation>
+                                       </xsd:element>
+                                       <xsd:element name="TailoredOrnamental02_NotApplicableMessage" type="comp:NotApplicableMessage" >
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">Primary Function Area</xsd:documentation>
+                                          </xsd:annotation>
+                                       </xsd:element>
+                                    </xsd:choice>
                                     <xsd:element name="TailoredOrnamental03to05Label" minOccurs="0">
                                        <xsd:annotation>
                                           <xsd:documentation source="FieldText">CALCULATED ALLOWANCE (Watts)</xsd:documentation>
@@ -8975,14 +9017,21 @@ Else result = SeeOtherSection  End If</dtyp:termConditions>
                                           </xsd:appinfo>
                                        </xsd:annotation>
                                     </xsd:element>
-                                    <xsd:element name="TailoredValuable02_SpaceFunctionTailored" type="comp:SpaceFunctionTailored" >
-                                       <xsd:annotation>
-                                          <xsd:documentation source="FieldText">Primary Function Area</xsd:documentation>
-                                          <xsd:appinfo source="CBECCnrXML">
-                                             <dtyp:CBECCnrXMLterm>Spc:SpcFunc</dtyp:CBECCnrXMLterm>
-                                          </xsd:appinfo>
-                                       </xsd:annotation>
-                                    </xsd:element>
+                                    <xsd:choice maxOccurs="1">
+                                       <xsd:element name="TailoredValuable02_SpaceFunctionTailored" type="comp:SpaceFunctionTailored" >
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">Primary Function Area</xsd:documentation>
+                                             <xsd:appinfo source="CBECCnrXML">
+                                                <dtyp:CBECCnrXMLterm>Spc:SpcFunc</dtyp:CBECCnrXMLterm>
+                                             </xsd:appinfo>
+                                          </xsd:annotation>
+                                       </xsd:element>
+                                       <xsd:element name="TailoredValuable02_NotApplicableMessage" type="comp:NotApplicableMessage" >
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">Primary Function Area</xsd:documentation>
+                                          </xsd:annotation>
+                                       </xsd:element>
+                                    </xsd:choice>
                                     <xsd:element name="TailoredValuable03to10Label" minOccurs="0">
                                        <xsd:annotation>
                                           <xsd:documentation source="FieldText">Allotted Watts</xsd:documentation>
