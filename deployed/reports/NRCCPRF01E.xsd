@@ -5116,6 +5116,14 @@ Proj:Bldg:Story;Spc:ExtWall:Win:LeftFinDepth GT 0</dtyp:termConditions>
                                              </xsd:appinfo>
                                           </xsd:annotation>
                                        </xsd:element>
+                                       <xsd:element name="HvacWet02_WaterHeaterType" type="hvac:WaterHeaterType">
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">Equipment Type</xsd:documentation>
+                                             <xsd:appinfo source="CBECCnrXML">
+                                                <dtyp:CBECCnrXMLterm>FluidSys:WtrHtr:Name</dtyp:CBECCnrXMLterm>
+                                             </xsd:appinfo>
+                                          </xsd:annotation>
+                                       </xsd:element>
                                     </xsd:choice>
                                     <xsd:element name="HvacWet02a_DischargePriority" type="hvac:DischargePriority" minOccurs="0">
                                        <xsd:annotation>
@@ -5153,6 +5161,14 @@ Proj:Bldg:Story;Spc:ExtWall:Win:LeftFinDepth GT 0</dtyp:termConditions>
                                              <xsd:documentation source="CalculationsAndRules">If HvacWet02_ThermalEnergyStorageType has value, this field is required Else result = NotApplicable stored in NotApplicableMessage</xsd:documentation>
                                              <xsd:appinfo source="CBECCnrXML">
                                                 <dtyp:CBECCnrXMLterm>ThrmlEngyStor:StorCap</dtyp:CBECCnrXMLterm>
+                                             </xsd:appinfo>
+                                          </xsd:annotation>
+                                       </xsd:element>
+                                       <xsd:element name="HvacWet05_StorageCapacity" type="hvac:StorageCapacity">
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">Vol (gal)</xsd:documentation>
+                                             <xsd:appinfo source="CBECCnrXML">
+                                                <dtyp:CBECCnrXMLterm>FluidSys:WtrHtr:StorCap</dtyp:CBECCnrXMLterm>
                                              </xsd:appinfo>
                                           </xsd:annotation>
                                        </xsd:element>
@@ -5196,6 +5212,14 @@ Proj:Bldg:Story;Spc:ExtWall:Win:LeftFinDepth GT 0</dtyp:termConditions>
                                              </xsd:appinfo>
                                           </xsd:annotation>
                                        </xsd:element>
+                                       <xsd:element name="HvacWet06_RatedCapacityKBtuh" type="hvac:RatedCapacityKBtuh">
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">Rated Capacity</xsd:documentation>
+                                             <xsd:appinfo source="CBECCnrXML">
+                                                <dtyp:CBECCnrXMLterm>FluidSys:WtrHtr:CapRtd/1000</dtyp:CBECCnrXMLterm>
+                                             </xsd:appinfo>
+                                          </xsd:annotation>
+                                       </xsd:element>
                                     </xsd:choice>
                                     <xsd:element name="HvacWet07_CapacityUnits" type="hvac:CapacityUnits">
                                        <xsd:annotation>
@@ -5231,7 +5255,7 @@ Proj:Bldg:Story;Spc:ExtWall:Win:LeftFinDepth GT 0</dtyp:termConditions>
                                           <xsd:annotation>
                                              <xsd:documentation source="FieldText">Rating</xsd:documentation>
                                              <xsd:appinfo source="CBECCnrXML">
-                                                <dtyp:CBECCnrXMLterm>Chlr:COP</dtyp:CBECCnrXMLterm>
+                                                <dtyp:CBECCnrXMLterm>Chlr:COP or FluidSys:WtrHtr:COP</dtyp:CBECCnrXMLterm>
                                              </xsd:appinfo>
                                           </xsd:annotation>
                                        </xsd:element>
