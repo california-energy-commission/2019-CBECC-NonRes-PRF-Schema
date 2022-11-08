@@ -4522,7 +4522,7 @@
             <dtyp:displayterm value="ClosedTower">Closed Tower</dtyp:displayterm>
             <dtyp:displayterm value="ClosedTowerAxialFan">Propeller/ axial fan closed-circuit cooling tower</dtyp:displayterm>
             <dtyp:displayterm value="ClosedTowerCentrifugalFan">Centrifugal fan closed-circuit cooling tower</dtyp:displayterm>
-            <dtyp:displayterm value="ClosedTowerEvaporative"></dtyp:displayterm>
+            <dtyp:displayterm value="ClosedTowerEvaporative">Closed Tower Evaporative</dtyp:displayterm>
             <dtyp:displayterm value="EvaporativeCondenserAxialFan">Propeller/ axial fan evaporative condensers</dtyp:displayterm>
             <dtyp:displayterm value="EvaporativeCondenserCentrifugalFan">Centrifugal fan evaporative condensers</dtyp:displayterm>
             <dtyp:displayterm value="OpenTower">Open Tower</dtyp:displayterm>
