@@ -8176,11 +8176,31 @@ Else result = SeeOtherSection  End If</dtyp:termConditions>
                <xsd:choice >
                   <xsd:element name="LtgControlsNA" minOccurs="0">
                      <xsd:annotation>
-                        <xsd:documentation source="FieldText">See NRCC-LTI-E for mandatory controls</xsd:documentation>
-                        <xsd:documentation source="AdditionalRequirements">See NRCC-LTI-E for mandatory controls</xsd:documentation>
+                        <xsd:documentation source="FieldText">See NRCC-LTI-01-E for mandatory controls</xsd:documentation>
+                        <xsd:documentation source="AdditionalRequirements">See NRCC-LTI-01-E for mandatory controls</xsd:documentation>
                         <xsd:documentation source="CalculationsAndRules">If no data for this section display this message</xsd:documentation>
                      </xsd:annotation>
-                  </xsd:element>
+                     <xsd:complexType>
+                        <xsd:sequence>
+                           <xsd:element name="LtgControls01_MandatoryBuildingDemandResponseControlRequired" type="comp:MandatoryBuildingDemandResponseControlRequired" minOccurs="0" >
+                              <xsd:annotation>
+                                 <xsd:documentation source="FieldText">Mandatory Demand Response [d:t24refnolink/]110.12(c)</xsd:documentation>
+                                 <xsd:appinfo source="CBECCnrXML">
+                                    <dtyp:CBECCnrXMLterm>Proj:MandatoryLtgCtrlDescRpt[]</dtyp:CBECCnrXMLterm>
+                                 </xsd:appinfo>
+                              </xsd:annotation>
+                           </xsd:element>
+                           <xsd:element name="LtgControls02_MandatoryBuildingShutOffControlRequired" type="comp:MandatoryBuildingShutOffControlRequired" minOccurs="0" >
+                              <xsd:annotation>
+                                 <xsd:documentation source="FieldText">Shut-Off Controls [d:t24refnolink/]130.1(c) &amp; 160.5(b)4C</xsd:documentation>
+                                 <xsd:appinfo source="CBECCnrXML">
+                                    <dtyp:CBECCnrXMLterm>Proj:MandatoryLtgCtrlIsBldgShutOffCtrlRpt</dtyp:CBECCnrXMLterm>
+                                 </xsd:appinfo>
+                              </xsd:annotation>
+                           </xsd:element>
+                        </xsd:sequence>
+                     </xsd:complexType>
+                  </xsd:element>                  
                   <xsd:element name="LtgControlsReq" >
                      <xsd:annotation>
                         <xsd:documentation source="FieldText"></xsd:documentation>
@@ -8207,14 +8227,7 @@ Else result = SeeOtherSection  End If</dtyp:termConditions>
                                     <dtyp:CBECCnrXMLterm>Proj:MandatoryLtgCtrlIsBldgShutOffCtrlRpt</dtyp:CBECCnrXMLterm>
                                  </xsd:appinfo>
                               </xsd:annotation>
-                           </xsd:element>
-                           <xsd:element name="LtgControlsNA" minOccurs="0">
-                              <xsd:annotation>
-                                 <xsd:documentation source="FieldText">See NRCC-LTI-E for mandatory controls</xsd:documentation>
-                                 <xsd:documentation source="AdditionalRequirements">See NRCC-LTI-E for mandatory controls</xsd:documentation>
-                                 <xsd:documentation source="CalculationsAndRules">If no data for this section display this message</xsd:documentation>
-                              </xsd:annotation>
-                           </xsd:element>
+                           </xsd:element>                          
                            <xsd:element name="LtgControlsCol0409Label" minOccurs="0">
                               <xsd:annotation>
                                  <xsd:documentation source="FieldText">Area Level Controls [d:i](includes all lighting controls installed in conditioned space to meet mandatory requirements per [d:t24refnolink/]130.1)[/d:i]</xsd:documentation>
